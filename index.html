@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="work.css">
+</head>
+
+<body class="unselectable">
+
+  <div class="container">
+
+    <div class="paragraph">
+      <span>Росход газа на 100 км.</span>
+      <input class="input" id="consumption" type="tel" value="11">
+    </div>
+    <div class="paragraph">
+      <span>Цена за 1лтр газа</span>
+      <input class="input" id="gas-price" type="tel" value="18.49">
+    </div>
+    <div class="paragraph">
+      <span>Прогрев автомобиля</span>
+      <input class="input" id="Warming-up-the-car" type="tel" value="10">
+    </div>
+    <br>
+     
+    <div class="block-reverse">
+
+      <div class="indicators">
+        <div class="indicator paragraph">
+          <span>Bolt</span>
+          <div>
+            <input class="input" id="bolt-before" type="tel" placeholder="До работы">
+            <input class="input" id="bolt-after" type="tel" placeholder="После">
+          </div>
+        </div>
+        <div class="indicator paragraph margin-bottom-0">
+          <span>Розмен</span>
+          <div>
+            <input class="input" id="cash-before" type="tel" placeholder="До работы">
+            <input class="input" id="cash-after" type="tel" placeholder="После">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+      <div class="indicator paragraph acent-color">
+        <span>Проехал км.</span>
+        <div>
+          <input class="input" id="idKm" type="tel" placeholder="Всего">
+        </div>
+      </div>
+      <div class="indicator paragraph acent-color">
+        <span>Приват</span>
+        <div>
+          <input class="input" id="privat" type="tel">
+        </div>
+      </div>
+
+    <br>
+
+    <button class="button" id="button">Рассчитать</button>
+    <span>Заработал:</span>
+    <span id="earned" class="acent">--</span>
+    <span>грн.</span>
+
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>

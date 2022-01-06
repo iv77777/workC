@@ -50,13 +50,21 @@ class LocalStorageUs {
 const localStorageUs = new LocalStorageUs();
 
 // ********************<< // localStorage >>*****************************************************
-
+// получаем поля осле работы  з localStorage
 const objectLocalStorage = localStorageUs.getUsObject("keyUsWork");
 
 // если localStorage есть записаные даные то подставляем их на страницу
 if (objectLocalStorage.length > 0){
   boltBefore.value = objectLocalStorage[0].boltAfter;
   cashBefore.value = objectLocalStorage[0].cashAfter
+}
+
+// поличаем л/100 з localStorage
+const usObjectKm = localStorageUs.getUsObject("usObjectKm");
+
+// если usObjectKm есть записаные даные то подставляем их на страницу
+if (usObjectKm.length > 0) {
+  consumption.value = usObjectKm[0].valueKm;
 }
 
 // Cлушаем клик по кнопке Рассчитать и при клики запускаем фуекцию miscalculation
@@ -99,11 +107,5 @@ function validity(){
   });
 }
 validity();
-
-
-
-const usObjectKm = localStorageUs.getUsObject("usObjectKm");
-
-console.log(usObjectKm);
 
 

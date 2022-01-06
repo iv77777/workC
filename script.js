@@ -21,7 +21,7 @@ const button = document.querySelector('#button');
 const earned = document.querySelector('#earned');
 
 // ********************<< localStorage >>*****************************************************
-let usObject = [{ boltAfter: '', cashAfter: '' }];
+let usObject = [{ boltAfter: '', cashAfter: '', gasPrice: ''}];
 
 class LocalStorageUs {
   // Получает обект з LocalStorage
@@ -56,7 +56,8 @@ const objectLocalStorage = localStorageUs.getUsObject("keyUsWork");
 // если localStorage есть записаные даные то подставляем их на страницу
 if (objectLocalStorage.length > 0){
   boltBefore.value = objectLocalStorage[0].boltAfter;
-  cashBefore.value = objectLocalStorage[0].cashAfter
+  cashBefore.value = objectLocalStorage[0].cashAfter;
+  gasPrice.value = objectLocalStorage[0].gasPrice;
 }
 
 // поличаем л/100 з localStorage
@@ -70,7 +71,7 @@ if (usObjectKm.length > 0) {
 // Cлушаем клик по кнопке Рассчитать и при клики запускаем фуекцию miscalculation
 button.addEventListener('click', miscalculation);
 
-// Рсчитует заработок
+// Расчитует заработок
 function miscalculation(){
 
   const bolt = boltAfter.value - boltBefore.value;
@@ -89,6 +90,8 @@ function miscalculation(){
   // добавляем значения для localStorage
   usObject[0].boltAfter = boltAfter.value;
   usObject[0].cashAfter = cashAfter.value;
+  usObject[0].gasPrice = gasPrice.value;
+  
 
   // добавляем в localStorageUs
   localStorageUs.putUsObject("keyUsWork");

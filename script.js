@@ -20,12 +20,47 @@ const button = document.querySelector('#button');
 
 const earned = document.querySelector('#earned');
 
+// ********************<< localStorage >>*****************************************************
+let usObject = [{ boltAfter: '', cashAfter: '' }];
 
+class LocalStorageUs {
+  // Получает обект з LocalStorage
+  getUsObject(keyName) {
+    // Получает обект з LocalStorage
+    const keyUs = localStorage.getItem(keyName);
 
-// Шлушаем клик по кнопке Рассчитать и при клики запускаем фуекцию miscalculation
+    // если есть обект в localStorage
+    if (keyUs !== null) {
+      //переобразовуем из строки в масив и возвращаем
+      return JSON.parse(keyUs);
+    }
+    // если localStorage пустой то возвращам пустой масив
+    return [];
+  }
+
+  //добавляет обект в LocalStorage
+  putUsObject(keyName) {
+    // переобразовуем масив usObject в строку и записываем в usObjectText
+    let usObjectText = JSON.stringify(usObject);
+    // добавляем usObjectText в localStorage
+    localStorage.setItem(keyName, usObjectText)
+  }
+}
+
+const localStorageUs = new LocalStorageUs();
+
+// ********************<< // localStorage >>*****************************************************
+
+const objectLocalStorage = localStorageUs.getUsObject("keyUsWork");
+
+// если localStorage есть записаные даные то подставляем их на страницу
+if (objectLocalStorage.length > 0){
+  boltBefore.value = objectLocalStorage[0].boltAfter;
+  cashBefore.value = objectLocalStorage[0].cashAfter
+}
+
+// Cлушаем клик по кнопке Рассчитать и при клики запускаем фуекцию miscalculation
 button.addEventListener('click', miscalculation);
-
-
 
 // Рсчитует заработок
 function miscalculation(){
@@ -40,6 +75,15 @@ function miscalculation(){
   
   // Высчитуетм виводит на страницу мой зароботок
   earned.innerHTML = Math.round(bolt + Number(privat.value) + cash - priceKm - WarmingUpTheCar.value);
+
+
+  
+  // добавляем значения для localStorage
+  usObject[0].boltAfter = boltAfter.value;
+  usObject[0].cashAfter = cashAfter.value;
+
+  // добавляем в localStorageUs
+  localStorageUs.putUsObject("keyUsWork");
 }
 
 // при фокусе на input убераем placeholder
@@ -55,3 +99,5 @@ function validity(){
   });
 }
 validity();
+
+

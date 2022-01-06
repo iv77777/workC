@@ -101,3 +101,9 @@ function validity(){
 validity();
 
 
+
+const usObjectKm = localStorageUs.getUsObject("usObjectKm");
+
+console.log(usObjectKm);
+
+

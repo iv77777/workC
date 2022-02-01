@@ -8,22 +8,14 @@
   <title>Work</title>
  
   <!-- favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="favicons2/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicons2/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicons2/favicon-16x16.png">
-  <link rel="manifest" href="favicons2/site.webmanifest">
-  <link rel="mask-icon" href="favicons2/safari-pinned-tab.svg" color="#d57b5b">
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicons2/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicons2/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicons2/favicon-16x16.png">
+  <link rel="manifest" href="./site.webmanifest">
+  <link rel="mask-icon" href="./favicons2/safari-pinned-tab.svg" color="#d57b5b">
   <meta name="msapplication-TileColor" content="#3a3a3a">
   <meta name="theme-color" content="#3a3a3a">
-
-  <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff"> -->
-  <!--// favicons -->
+ <!--// favicons -->
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
@@ -35,63 +27,126 @@
 
   <div class="container">
 
-    <div class="paragraph">
-      <span>Росход газа на 100 км.</span>
-      <input class="input" id="consumption" type="tel" value="12">
+    <div class="spollers__inner" data-spollers>
+      <button class="button-spoler" data-spoller>
+        расх. <span class="button-spoler__color" id="consumption_js">12.89</span> /
+        ц.    <span class="button-spoler__color" id="gasPrice_js">17.9</span> /
+        прог. <span class="button-spoler__color" id="warmingUpTheCar_js">10</span> 
+      </button>
+      
+      <div class="spoler__body" >
+        <div class="paragraph">
+          <span>Расход л/100 км.</span>
+          <input class="input consumption_js" data-fuel="consumption_js" type="tel" value="12.89">
+        </div>
+        <div class="paragraph">
+          <span>Цена за 1 л. газа (грн.)</span>
+          <input class="input gasPrice_js" data-fuel="gasPrice_js" type="tel" value="17.9">
+        </div>
+        <div class="paragraph margin-bottom-0">
+          <span>Прогрев автомобиля (грн.)</span>
+          <input class="input warmingUpTheCar_js" data-fuel="warmingUpTheCar_js" type="tel" value="10">
+        </div>
+      </div>
     </div>
-    <div class="paragraph">
-      <span>Цена за 1лтр газа</span>
-      <input class="input" id="gas-price" type="tel" value="18.49">
-    </div>
-    <div class="paragraph">
-      <span>Прогрев автомобиля</span>
-      <input class="input" id="Warming-up-the-car" type="tel" value="10">
-    </div>
+  
     <br>
      
-    <div class="block-reverse">
-
-      <div class="indicators">
-        <div class="indicator paragraph">
-          <span>Bolt</span>
+    <div class="values__block acent-background">
+      <div class="values__item">
+          <div class="values__name">Uklon</div>
           <div>
-            <input class="input" id="bolt-before" type="tel" placeholder="До работы">
-            <input class="input" id="bolt-after" type="tel" placeholder="После">
+            <input class="input input__before-work_js saveRevers_js" type="tel" placeholder="До работы">
+            <input class="input input__after-work_js input-save__after-work_js" type="tel" placeholder="После">
           </div>
-        </div>
-        <div class="indicator paragraph margin-bottom-0">
-          <span>Розмен</span>
-          <div>
-            <input class="input" id="cash-before" type="tel" placeholder="До работы">
-            <input class="input" id="cash-after" type="tel" placeholder="После">
-          </div>
-        </div>
-
       </div>
+      <div class="values__item">
+        <div class="values__name">838</div>
+        <div>
+          <input class="input input__before-work_js saveRevers_js" type="tel" placeholder="До работы">
+          <input class="input input__after-work_js input-save__after-work_js" type="tel" placeholder="После">
+        </div>
+      </div>
+      <div class="values__item">
+          <div class="values__name">Bolt</div>
+          <div>
+            <input class="input input__before-work_js saveRevers_js" type="tel" placeholder="До работы">
+            <input class="input input__after-work_js input-save__after-work_js" type="tel" placeholder="После">
+          </div>
+      </div>
+      <div class="values__item">
+          <div class="values__name">Размение</div>
+          <div>
+            <input class="input input__before-work_js saveRevers_js" type="tel" placeholder="До работы">
+            <input class="input input__after-work_js input-save__after-work_js" type="tel" placeholder="После">
+          </div>
+      </div>
+
+      <div class="values__item">
+          <div class="values__name">Наличие</div>
+          <div>
+            <input class="input input__after-work_js" type="tel" placeholder="0">
+          </div>
+      </div>
+      <div class="values__item">
+          <div class="values__name">Приват</div>
+          <div>
+            <input class="input input__after-work_js" type="tel" placeholder="0">
+          </div>
+      </div>
+
     </div>
-
-      <div class="indicator paragraph acent-color">
-        <span>Проехал км.</span>
-        <div>
-          <input class="input" id="idKm" type="tel" placeholder="Всего">
-        </div>
-      </div>
-      <div class="indicator paragraph acent-color">
-        <span>Приват</span>
-        <div>
-          <input class="input" id="privat" type="tel">
-        </div>
-      </div>
 
     <br>
 
-    <button class="button" id="button">Рассчитать</button>
-    <span>Заработал:</span>
-    <span id="earned" class="acent">--</span>
-    <span>грн.</span>
+    <div class="paragraph acent-color">
+      <span>Проехал км.</span>
+      <div>
+        <input class="input" id="traveledKm_js" type="tel" placeholder="0">
+      </div>
+    </div>
+    <div class="earned__inner">
+      <span>Заработал:</span>
+      <span class="acent" id="earned__value_js">--</span>
+      <span id="earnedPosition_js">грн.</span>
+    </div>
+   
+    <button class="button" id="buttonCalculate_js">Рассчитать</button>
 
   </div>
 
-<script src="script.js"></script>
+  <div class="button-storage__inner" id="button-storage__inner_js">
+    <img class="button-storage__img" src="img/p.png" alt="img">
+  </div>
+
+  <!-- popup -->
+  <div class="popup-values" id="popup-values_js">
+    <span class="popup__button-close"></span>
+    <h2 class="popup-values__title">Вы сохранили!</h2>
+    <!-- <div class="popup-values__item">
+      <span>Uklon</span>
+      <input class="input" type="tel" placeholder="0">
+    </div>
+    <div class="popup-values__item">
+      <span>838</span>
+      <input class="input" type="tel" placeholder="0">
+    </div>
+    <div class="popup-values__item">
+      <span>Bolt</span>
+      <input class="input" type="tel" placeholder="0">
+    </div>
+    <div class="popup-values__item">
+      <span>Размение</span>
+      <input class="input" type="tel" placeholder="0">
+    </div> -->
+  </div>
+
+  <div class="popup_fake-body" id="popup_fake-body_js"></div>
+
+  <div class="popup-fon" id="popup-fon_js"></div>
+  <!-- //popup -->
+
+  <script src="spoilers.js"></script>
+  <script src="work.js"></script>
 </body>
 </html>

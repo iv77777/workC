@@ -10,7 +10,7 @@ let indexErray = inputBeforeWork.length -1;
 
 
 //ключ расхода топлива localStorage 
-const keyNameFuel = 'keyNameFuel';
+const keyNameFuel = 'usObjectKm';
 //ключ сохранньных полей после работы localStorage 
 const keyAfterWork = "keyAfterWork";
 

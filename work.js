@@ -248,56 +248,11 @@ function sfeqfqf() {
 }
 sfeqfqf();
 
-// << //Рендерим поля после работы в попап и заполняем их с localStorage если он не пустой>>
-
-// <<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 function a(element, value) {
     if (value > 0) {
       ReversValue(element, value);
       }
 }
-// польотт значений из папкы
-// let i = 0;
-// function a(element, value) {
-//     // 
-//   console.log(value > 0);
-
-//   if (inputBeforeWork.length > i) {
-//     if (value > 0) {
-//       ReversValue(element, value);
-//         i++;
-//         // setTimeout(a, 500);
-//         // 
-//     } else {
-//         i++;
-//         // a(element);
-//       }
-//   }
-// }
-// <<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>
-// if (!isEmpty(getLocalStorageAfterWork)) {
-//   // инпуты до роботы которым сохраняем значения в localStorage
-//   const saveRevers = document.querySelectorAll('.saveRevers_js');
-//   // польотт значений из папкы
-//   let i = 0;
-//   function a() {
-//     if (saveRevers.length > i) {
-//       // 
-//       if (saveRevers[i].value > 0){
-//         ReversValue(saveRevers[i]);
-//         i++;
-//         setTimeout(a, 500);
-//       // 
-//      }else{
-//        i++;
-//        a();
-//      }
-
-//    }
-//   }
-//   setTimeout(a, 500);
-// } 
-// <<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 // делает фиксированим елемент в котором выводим зароботок при запуске странице
 earnedFixed(earnedPositionJs, earnedValueJs);
@@ -316,6 +271,7 @@ document.addEventListener('click', (e) => {
 
   // при клик на input с значениями топлива 
   if(e.target.dataset.fuel){
+    console.log(e.target.dataset.fuel);
     // Находим елемент на странице у которого id = e.target.dataset.fuel
     const buttonNameInnerHtml = document.querySelector(`#${e.target.dataset.fuel}`);
    
@@ -323,17 +279,25 @@ document.addEventListener('click', (e) => {
     e.target.oninput = function () {
       //в елемента buttonNameInnerHtml  Меняет  innerHTML  на e.target.value
       putInnerHtml(buttonNameInnerHtml, e.target.value)
-    };
-    // при событии onchange (срабатывает по окончании изменения элемента).
-    e.target.onchange = async function () {
+
       // получаем сохраненный обек с LocalStorage
-      const objectValueKm = await getLocalStorage(keyNameFuel);
-    
+      const objectValueKm = getLocalStorage(keyNameFuel);
+
       // миняем или добавляем значения обекта objectValueKm
       objectValueKm[e.target.dataset.fuel] = e.target.value;
       // записываем измененный обект в LocalStorage
       putLocalStorage(keyNameFuel, objectValueKm);
     };
+    // при событии oninput  (срабатывает каждый раз при изменении значения inputa).
+    // e.target.oninput  = async function () {
+    //   // получаем сохраненный обек с LocalStorage
+    //   const objectValueKm = await getLocalStorage(keyNameFuel);
+    
+    //   // миняем или добавляем значения обекта objectValueKm
+    //   objectValueKm[e.target.dataset.fuel] = e.target.value;
+    //   // записываем измененный обект в LocalStorage
+    //   putLocalStorage(keyNameFuel, objectValueKm);
+    // };
   }
 
   // при клик на кнопку рассчитать
